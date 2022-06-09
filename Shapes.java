@@ -11,16 +11,16 @@ class Square{
     }
 }
 class Rectangle{
-    int length;
-    int breadth;
-    int perimeter(){
+
+    static int perimeter(int l,int b){
+        int  length=l;int breadth=b;
         int p=2*(length+breadth);
         return p;
     }
-    int area(){
+    /*int area(){
         int a=length*breadth;
         return a;
-    }
+    }*/
 }
 class Circle{
     int radius;
@@ -35,6 +35,7 @@ class Circle{
 }
 public class Shapes {
     public static void main(String[] args) {
+        int length, breadth;
         Scanner s=new Scanner(System.in);
         Square sq=new Square();
         System.out.println("Enter side:");
@@ -43,10 +44,10 @@ public class Shapes {
         System.out.println(sq.area());
         Rectangle rec=new Rectangle();
         System.out.println("Enter length and breadth");
-        rec.length=s.nextInt();
-        rec.breadth=s.nextInt();
-        System.out.println(rec.perimeter());
-        System.out.println(rec.area());
+        length=s.nextInt();
+        breadth=s.nextInt();
+        System.out.println(Rectangle.perimeter(length,breadth));
+        //System.out.println(rec.area());
         Circle cir=new Circle();
         System.out.println("Enter radius");
         cir.radius=s.nextInt();
